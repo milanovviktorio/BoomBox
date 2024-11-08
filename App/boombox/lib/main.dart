@@ -22,29 +22,43 @@ class MyHomePage extends StatelessWidget {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
+      backgroundColor: Color(0xffe0fbfc),
       appBar: AppBar(
-        title: const Text('Home'),
-        backgroundColor: Colors.grey[500],
+        title: const Text('BoomBox'),
+        backgroundColor: Color(0xff9db4c0),
         titleTextStyle: const TextStyle(
-          color: Colors.white,
+          color: Color(0xffe0fbfc),
           fontSize: 24.0,
           fontWeight: FontWeight.bold
         ),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Welcome to BoomBox!',
+              style: TextStyle(fontSize: 24),
+            ),
+            Image.asset('assets/trust.png'),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
-      selectedItemColor: Colors.black,  
-      unselectedItemColor: Colors.grey[500],
+      backgroundColor: Color(0xff9db4c0),
+      selectedItemColor: Color(0xff253237),  
+      unselectedItemColor: Color(0xffe0fbfc),
   items: [
     BottomNavigationBarItem(
-      icon: Icon(Icons.home, color:Colors.black),
+      icon: Icon(Icons.home, color:Color(0xff253237)),
       label: 'Home',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.message_outlined, color: Colors.grey[500]),
+      icon: Icon(Icons.message_outlined, color: Color(0xffe0fbfc)),
       label: 'Messages',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.person, color:Colors.grey[500]),
+      icon: Icon(Icons.person, color:Color(0xffe0fbfc)),
       label: 'Profile',
     ),
   ],
@@ -78,29 +92,41 @@ class Messages extends StatelessWidget {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
+      backgroundColor: Color(0xffe0fbfc),
       appBar: AppBar(
         title: const Text('Messages'),
-        backgroundColor: Colors.grey[500],
+        backgroundColor: Color(0xff9db4c0),
         titleTextStyle: const TextStyle(
-          color: Colors.white,
+          color: Color(0xffe0fbfc),
           fontSize: 24.0,
           fontWeight: FontWeight.bold
         ),
       ),
+      body: Padding(
+    padding: const EdgeInsets.only(top: 24.0),
+    child: Align(
+      alignment: Alignment.topCenter,
+      child: Text(
+        'No Current Messages',
+        style: TextStyle(fontSize: 24),
+      ),
+    ),
+  ),
             bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: Colors.black,  
-          unselectedItemColor: Colors.grey[500],
+            backgroundColor: Color(0xff9db4c0),
+      selectedItemColor: Color(0xff253237),  
+      unselectedItemColor: Color(0xffe0fbfc),
   items: [
     BottomNavigationBarItem(
-      icon: Icon(Icons.home, color:Colors.grey[500]),
+      icon: Icon(Icons.home, color:Color(0xffe0fbfc)),
       label: 'Home',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.message_outlined, color: Colors.black),
+      icon: Icon(Icons.message_outlined, color: Color(0xff253237)),
       label: 'Messages',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.person, color:Colors.grey[500]),
+      icon: Icon(Icons.person, color:Color(0xffe0fbfc)),
       label: 'Profile',
     ),
   ],
@@ -134,29 +160,31 @@ class Profile extends StatelessWidget {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
+      backgroundColor: Color(0xffe0fbfc),
       appBar: AppBar(
         title: const Text('Profile'),
-        backgroundColor: Colors.grey[500],
+        backgroundColor: Color(0xff9db4c0),
         titleTextStyle: const TextStyle(
-          color: Colors.white,
+          color: Color(0xffe0fbfc),
           fontSize: 24.0,
           fontWeight: FontWeight.bold
         ),
       ),
   bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.black,  
-          unselectedItemColor: Colors.grey[500],
+          backgroundColor: Color(0xff9db4c0),
+      selectedItemColor: Color(0xff253237),  
+      unselectedItemColor: Color(0xffe0fbfc),
   items: [
     BottomNavigationBarItem(
-      icon: Icon(Icons.home, color:Colors.grey[500]),
+      icon: Icon(Icons.home, color:Color(0xffe0fbfc)),
       label: 'Home',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.message_outlined, color: Colors.grey[500]),
+      icon: Icon(Icons.message_outlined, color: Color(0xffe0fbfc)),
       label: 'Messages',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.person, color:Colors.black),
+      icon: Icon(Icons.person, color:Color(0xff253237)),
       label: 'Profile',
     ),
   ],
@@ -177,6 +205,19 @@ class Profile extends StatelessWidget {
     }
   },
 ),
+body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '   Logged in as:\nViktorio Milanov',
+              style: TextStyle(fontSize: 24),
+            ),
+            SizedBox(height: 20),
+            Icon(Icons.person, size: 169),
+          ],
+        ),
+      ),
       ),
   );
   }
