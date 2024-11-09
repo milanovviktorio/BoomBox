@@ -114,7 +114,11 @@ class _MessagesState extends State<Messages> {
         setState(() {
           Map<String, dynamic> data = jsonDecode(response.body);
           String values = data.values.join(", ");
-          _responseData = values; // Save response in variable
+          _responseData = values;
+          if (_responseData == "1")
+          {
+            _responseData = "Emergency!\nAlsion 2, Sonderborg\n" + DateTime.now().toString();
+          } // Save response in variable
         });
       } else {
         setState(() {
@@ -152,6 +156,7 @@ class _MessagesState extends State<Messages> {
       child: Text(
         _responseData,
         style: TextStyle(fontSize: 24),
+        textAlign: TextAlign.center,
       ),
     ),
   ),
