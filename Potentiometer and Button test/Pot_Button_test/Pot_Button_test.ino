@@ -17,6 +17,7 @@ void loop() {
   int potStateVolume = analogRead(volumePot);
   int volume = map(potStateVolume, 0, 1023, 0, 30);
   int buttonState;
+   Serial.println(volume);
   //Serial.println(buttonState);
   if(digitalRead(8) == 0)
   {
@@ -41,5 +42,4 @@ void loop() {
   {
     Serial.println("Channel 5");
   }
-  if
 }
