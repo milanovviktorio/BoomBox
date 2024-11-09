@@ -2,11 +2,11 @@
 #include <HTTPClient.h>
 
 // Wi-Fi credentials
-const char* ssid = "";
-const char* password = "";
+const char* ssid = "Galaxy S20 FE 5G";
+const char* password = "ednodoosem";
 
 // Target server details (where the ESP32 will send the POST request)
-const char* serverAddress = "http:/:5000/post_data";
+const char* serverAddress = "http://192.168.27.179:5000/post_data";
 
 void sendSensorData(int data) {
   
@@ -49,10 +49,11 @@ void setup(void)
   Serial.println("Connected to WiFi");
   Serial.print("ESP32 IP Address: ");
   Serial.println(WiFi.localIP());
+  sendSensorData(1);
 }
 
 
 void loop()
 {
-  sendSensorData(1);
+  
 }
