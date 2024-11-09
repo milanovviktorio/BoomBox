@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 void main() {
   runApp(MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,15 +22,17 @@ class MyApp extends StatelessWidget {
 int _currentIndex = 0;
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      backgroundColor: Color(0xffe0fbfc),
+      backgroundColor: const Color(0xffe0fbfc),
       appBar: AppBar(
         title: const Text('BoomBox'),
-        backgroundColor: Color(0xff9db4c0),
+        backgroundColor: const Color(0xff9db4c0),
         titleTextStyle: const TextStyle(
           color: Color(0xffe0fbfc),
           fontSize: 24.0,
@@ -36,7 +43,7 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Welcome to BoomBox!',
               style: TextStyle(fontSize: 24),
             ),
@@ -45,10 +52,10 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-      backgroundColor: Color(0xff9db4c0),
-      selectedItemColor: Color(0xff253237),  
-      unselectedItemColor: Color(0xffe0fbfc),
-  items: [
+      backgroundColor: const Color(0xff9db4c0),
+      selectedItemColor: const Color(0xff253237),  
+      unselectedItemColor: const Color(0xffe0fbfc),
+  items: const [
     BottomNavigationBarItem(
       icon: Icon(Icons.home, color:Color(0xff253237)),
       label: 'Home',
@@ -74,7 +81,7 @@ class MyHomePage extends StatelessWidget {
         break;
       case 2:
         _currentIndex = 3;
-       Navigator.push(context, MaterialPageRoute(builder: (_) => Profile()));
+       Navigator.push(context, MaterialPageRoute(builder: (_) => const Profile()));
         break;
     }
   },
@@ -84,18 +91,54 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class Messages extends StatelessWidget {
-  const Messages({Key? key}) : super(key: key);
+class Messages extends StatefulWidget {
+  @override
+  _MessagesState createState() => _MessagesState();
+}
+
+class _MessagesState extends State<Messages> {
+  String _responseData = "Loading...";
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData();
+  }
+
+  // Fetch data from the URL and store it in a variable
+  Future<void> _fetchData() async {
+    try {
+      final response = await http.get(Uri.parse('http://192.168.27.179:5000/get_data'));
+
+      if (response.statusCode == 200) {
+        setState(() {
+          Map<String, dynamic> data = jsonDecode(response.body);
+          String values = data.values.join(", ");
+          _responseData = values; // Save response in variable
+        });
+      } else {
+        setState(() {
+          _responseData = "Failed to load data";
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _responseData = "Error occurred: $e";
+      });
+      print("Error: $e");
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      backgroundColor: Color(0xffe0fbfc),
+      backgroundColor: const Color(0xffe0fbfc),
       appBar: AppBar(
         title: const Text('Messages'),
-        backgroundColor: Color(0xff9db4c0),
+        backgroundColor: const Color(0xff9db4c0),
         titleTextStyle: const TextStyle(
           color: Color(0xffe0fbfc),
           fontSize: 24.0,
@@ -103,20 +146,20 @@ class Messages extends StatelessWidget {
         ),
       ),
       body: Padding(
-    padding: const EdgeInsets.only(top: 24.0),
+    padding: EdgeInsets.only(top: 24.0),
     child: Align(
       alignment: Alignment.topCenter,
       child: Text(
-        'No Current Messages',
+        _responseData,
         style: TextStyle(fontSize: 24),
       ),
     ),
   ),
             bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Color(0xff9db4c0),
-      selectedItemColor: Color(0xff253237),  
-      unselectedItemColor: Color(0xffe0fbfc),
-  items: [
+            backgroundColor: const Color(0xff9db4c0),
+      selectedItemColor: const Color(0xff253237),  
+      unselectedItemColor: const Color(0xffe0fbfc),
+  items: const [
     BottomNavigationBarItem(
       icon: Icon(Icons.home, color:Color(0xffe0fbfc)),
       label: 'Home',
@@ -153,17 +196,17 @@ class Messages extends StatelessWidget {
 }
 
 class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+  const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      backgroundColor: Color(0xffe0fbfc),
+      backgroundColor: const Color(0xffe0fbfc),
       appBar: AppBar(
         title: const Text('Profile'),
-        backgroundColor: Color(0xff9db4c0),
+        backgroundColor: const Color(0xff9db4c0),
         titleTextStyle: const TextStyle(
           color: Color(0xffe0fbfc),
           fontSize: 24.0,
@@ -171,10 +214,10 @@ class Profile extends StatelessWidget {
         ),
       ),
   bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color(0xff9db4c0),
-      selectedItemColor: Color(0xff253237),  
-      unselectedItemColor: Color(0xffe0fbfc),
-  items: [
+          backgroundColor: const Color(0xff9db4c0),
+      selectedItemColor: const Color(0xff253237),  
+      unselectedItemColor: const Color(0xffe0fbfc),
+  items: const [
     BottomNavigationBarItem(
       icon: Icon(Icons.home, color:Color(0xffe0fbfc)),
       label: 'Home',
@@ -205,7 +248,7 @@ class Profile extends StatelessWidget {
     }
   },
 ),
-body: Center(
+body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
