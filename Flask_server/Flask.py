@@ -27,7 +27,7 @@ def get_data():
         }
     else:
         data_info = {
-            "message": "No data available yet"
+            "message": "No current messages"
         }
     return jsonify(data_info), 200
 
