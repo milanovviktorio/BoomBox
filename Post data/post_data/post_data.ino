@@ -91,8 +91,6 @@ void loop()
   if(buttonState == 0)
   {
     sendSensorData(1);
-  }else{
-    sendSensorData(0);
   }
   Serial.println(potStateRadio);
   int radio;
