@@ -23,7 +23,7 @@ A radio that is aimed at the seniors - improivng their everyday life, while taki
 
 ## Flow Chart
 
-![flow](assets/flow_chart.svg)
+![flow](assets/flow_chart1.svg)
 
 ## BoomKanal
 
