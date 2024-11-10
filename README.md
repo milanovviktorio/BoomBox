@@ -6,18 +6,20 @@ Bringing the World to Your Ear - One Word at a Time.
 
 A radio that is aimed at the seniors - improivng their everyday life, while taking into acount their difficulties.
 
+![BoomBox](assets/)
+
 ## Contents
 
 1. [3D Model](#3dmod)
 2. [Flow Chart](#flow)
-3. [BoomKanal™](#boomk)
+3. [BoomKanal™](#BoomKanal™)
 4. [Electrical Circuit](#elec)
 5. [Application](#app)
-6. [The Team - IBS](#Team)
+6. [The Team - IBS](#Team IBS)
 
 ## 3D Model
 
-![3dmod](LogicalTopology.png)
+![3dmod]()
 
 ## Flow Chart
 
@@ -30,7 +32,7 @@ Students can practice their Danish, help the community and get paid
 
 ## Electrical Circuit
 
-![Circuit](/assets/circuit.png)
+![elec](/assets/circuit.png)
 
 ## Application
 
