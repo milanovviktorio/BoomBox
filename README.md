@@ -10,8 +10,8 @@ A radio that is aimed at the seniors - improivng their everyday life, while taki
 
 ## Contents
 
-1. [3D Model](#3dmod)
-2. [Flow Chart](#flow)
+1. [3D Model](#3D-Model)
+2. [Flow Chart](#Flow-Chart)
 3. [BoomKanal™](#BoomKanal™)
 4. [Electrical Circuit](#elec)
 5. [Application](#app)
