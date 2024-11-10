@@ -5,7 +5,7 @@
 <br/>
 Bringing the World to Your Ear - One Word at a Time.        
 
-A radio that is aimed at the seniors - improivng their everyday life, while taking into acount their difficulties.
+A radio that is aimed at the seniors - improivng their everyday life, while taking into account their difficulties.
 
 
 ## Contents
@@ -40,7 +40,7 @@ Students can practice their Danish, help the community and get paid
 
 ## Team IBS
 
-Viktorio - Application development
-Arbi & Liubomir - Electrical Circuit and R&D
-Amelie & Teo - Design and manufacturing​
-Kristian - Business
+- Viktorio - Application development
+- Arbi & Liubomir - Electrical Circuit and R&D
+- Amelie & Teo - Design and manufacturing​
+- Kristian - Business
