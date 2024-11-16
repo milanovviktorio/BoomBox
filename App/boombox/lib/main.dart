@@ -108,7 +108,7 @@ class _MessagesState extends State<Messages> {
   // Fetch data from the URL and store it in a variable
   Future<void> _fetchData() async {
     try {
-      final response = await http.get(Uri.parse('http://192.168.27.179:5000/get_data'));
+      final response = await http.get(Uri.parse('http://192.168.43.213:5000/get_data'));
 
       if (response.statusCode == 200) {
         setState(() {

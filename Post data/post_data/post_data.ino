@@ -16,11 +16,12 @@ SoftwareSerial softwareSerial(PIN_MP3_RX, PIN_MP3_TX);
 DFRobotDFPlayerMini player;
 // Wi-Fi credentials
 int track = 1;
-const char* ssid = "Galaxy S20 FE 5G";
-const char* password = "ednodoosem";
+
+const char* ssid = "vitko";
+const char* password = "fromthescreentothering";
 
 // Target server details (where the ESP32 will send the POST request)
-const char* serverAddress = "http://192.168.27.179:5000/post_data";
+const char* serverAddress = "http://192.168.43.213:5000/post_data";
 
 void sendSensorData(int data) {
   
@@ -67,8 +68,6 @@ void setup(void)
   Serial.println(WiFi.localIP());
     if (player.begin(softwareSerial)) {
    Serial.println("OK");
-    player.volume(5);
-    
   } else {
     Serial.println("Connecting to DFPlayer Mini failed!");
   }
